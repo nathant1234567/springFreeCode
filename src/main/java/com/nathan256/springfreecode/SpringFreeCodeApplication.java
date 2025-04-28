@@ -7,7 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SpringFreeCodeApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringFreeCodeApplication.class, args);
+        var ctx = SpringApplication.run(SpringFreeCodeApplication.class, args);
+
+        MyFirstService myFirstService = ctx.getBean(MyFirstService.class);
+        System.out.println(myFirstService.tellAStory());
     }
 
 }
