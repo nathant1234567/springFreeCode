@@ -8,7 +8,7 @@ import java.util.List;
 @RestController
 public class StudentController {
 
-    private final StudentService studentService;
+    private final StudentService studentService; // Injecting the StudentService to handle business logic
 
     public StudentController(StudentService studentService) {
         this.studentService = studentService;
@@ -27,19 +27,19 @@ public class StudentController {
     }
 
     @GetMapping("/students")
-    public List<Student> findAllStudent() {
+    public List<StudentResponseDto> findAllStudent() {
         return this.studentService.findAllStudent();
     }
 
     @GetMapping("/students/{student-id}")
-    public Student findStudentById(
+    public StudentResponseDto findStudentById(
             @PathVariable("student-id") Integer id
     ) {
         return this.studentService.findStudentById(id);
     }
 
     @GetMapping("/students/search/{student-name}")
-    public List<Student> findStudentByName(
+    public List<StudentResponseDto> findStudentByName(
             @PathVariable("student-name") String name
     ) {
         return this.studentService.findStudentByName(name);
