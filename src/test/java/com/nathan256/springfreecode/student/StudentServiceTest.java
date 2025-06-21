@@ -166,6 +166,7 @@ class StudentServiceTest {
 
         // Then
         assertEquals(students.size(), responseDto.size());
-        verify(repository, times(1)).findAllByFirstNameContaining(studentName);
+        verify(repository, times(1))
+                .findAllByFirstNameContaining(studentName);
     }
 }
