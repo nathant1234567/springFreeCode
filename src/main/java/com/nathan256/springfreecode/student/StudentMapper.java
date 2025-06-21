@@ -1,11 +1,16 @@
-package com.nathan256.springfreecode;
+package com.nathan256.springfreecode.student;
 
+import com.nathan256.springfreecode.school.School;
 import org.springframework.stereotype.Service;
 
 @Service
 public class StudentMapper {
 
     public Student toStudent(StudentDto dto) {
+        if (dto == null) {
+            throw new NullPointerException("StudentDto cannot be null");
+        }
+
         var student = new Student();
         student.setFirstName(dto.firstName());
         student.setLastName(dto.lastName());

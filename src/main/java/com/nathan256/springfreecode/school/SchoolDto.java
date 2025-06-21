@@ -1,4 +1,4 @@
-package com.nathan256.springfreecode;
+package com.nathan256.springfreecode.school;
 
 public record SchoolDto(
         String name

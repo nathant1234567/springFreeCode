@@ -1,6 +1,8 @@
-package com.nathan256.springfreecode;
+package com.nathan256.springfreecode.student;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.nathan256.springfreecode.school.School;
+import com.nathan256.springfreecode.studentprofile.StudentProfile;
 import jakarta.persistence.*;
 
 @Entity

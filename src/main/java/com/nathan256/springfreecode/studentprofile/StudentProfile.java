@@ -1,5 +1,6 @@
-package com.nathan256.springfreecode;
+package com.nathan256.springfreecode.studentprofile;
 
+import com.nathan256.springfreecode.student.Student;
 import jakarta.persistence.*;
 
 @Entity

@@ -1,4 +1,4 @@
-package com.nathan256.springfreecode;
+package com.nathan256.springfreecode.student;
 
 public record StudentResponseDto(
         String firstName,

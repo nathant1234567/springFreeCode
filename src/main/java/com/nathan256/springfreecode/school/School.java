@@ -1,6 +1,7 @@
-package com.nathan256.springfreecode;
+package com.nathan256.springfreecode.school;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.nathan256.springfreecode.student.Student;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
