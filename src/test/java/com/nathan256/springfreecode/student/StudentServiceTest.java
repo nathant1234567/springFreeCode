@@ -140,4 +140,32 @@ class StudentServiceTest {
 
         verify(repository, times(1)).findById(studentId);
     }
+
+    @Test
+    public void should_return_student_by_name() {
+        // Given
+        String studentName = "John";
+        List<Student> students = new ArrayList<>();
+        students.add(new Student(
+                "John",
+                "Doe",
+                "john@mail.com",
+                1
+        ));
+
+        // Mock the calls
+        when(repository.findAllByFirstNameContaining(studentName))
+                .thenReturn(students);
+        when(studentMapper.toStudentResponseDto(any(Student.class)))
+                .thenReturn(new StudentResponseDto(
+                        "John",
+                        "Doe",
+                        "john@mail.com")
+                );
+        var responseDto = studentService.findStudentByName(studentName );
+
+        // Then
+        assertEquals(students.size(), responseDto.size());
+        verify(repository, times(1)).findAllByFirstNameContaining(studentName);
+    }
 }
